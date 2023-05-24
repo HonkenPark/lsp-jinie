@@ -4,12 +4,12 @@
 	"description": "JINIE Language Server Protocol for Mediazen",
 	"author": "Mediazen PD R&D",
 	"license": "MIT",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/HonkenPark/lsp-jinie"
 	},
-	"publisher": "Mediazen PD R&D",
+	"publisher": "3b203275-6a77-6710-a6ca-ef90e8aa1b70",
 	"categories": [
 		"Extension Packs"
 	],

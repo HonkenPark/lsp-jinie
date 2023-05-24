@@ -11,7 +11,7 @@ import {
 	Uri,
 	Range,
 	Position,
-	OutputChannel 
+	// OutputChannel 
 } from 'vscode';
 
 import {
@@ -22,11 +22,11 @@ import {
 } from 'vscode-languageclient/node';
 
 let client: LanguageClient;
-let outputChannel: OutputChannel;
+// let outputChannel: OutputChannel;
 
 export function activate(context: ExtensionContext) {
-	outputChannel = window.createOutputChannel('LSP Project');
-    outputChannel.appendLine('LSP Project activated.');
+	// outputChannel = window.createOutputChannel('LSP Project');
+    // outputChannel.appendLine('LSP Project activated.');
 
 	// The server is implemented in node
 	const serverModule = context.asAbsolutePath(
@@ -65,8 +65,8 @@ export function activate(context: ExtensionContext) {
 	client.start();
 	// Handle textDocument/definition requests from the server
 	client.onNotification('textDocument/definition', (params: any) => {
-		outputChannel.appendLine('onNotification');
-		outputChannel.show();
+		// outputChannel.appendLine('onNotification');
+		// outputChannel.show();
 		const uri = Uri.parse(params.uri);
 		const position = new Position(params.position.line, params.position.character);
 
@@ -77,13 +77,13 @@ export function activate(context: ExtensionContext) {
 		});
 	});
 
-	outputChannel.show();
+	// outputChannel.show();
 }
 
 export function deactivate(): Thenable<void> | undefined {
 	if (!client) {
 		return undefined;
 	}
-	outputChannel.dispose();
+	// outputChannel.dispose();
 	return client.stop();
 }
